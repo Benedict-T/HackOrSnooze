@@ -110,7 +110,21 @@ function saveUserCredentialsInLocalStorage() {
 function updateUIOnUserLogin() {
   console.debug("updateUIOnUserLogin");
 
-  $allStoriesList.show();
+hidePageComponents();
+
+// in order for "FAVORITES" TO appear, we are re-displaying stories
+putStoriesOnPage();
+$allStoriesList.show();
 
   updateNavOnLogin();
+  generateUserProfile();
+  $storiesContainer.show();
+}
+
+function generateUserProfile() {
+  console.debug("generateUserProfile");
+
+  $("#profile-name").text(currentUser.name);
+  $("#profile-username").text(currentUser.username);
+  $("#profile-account-date").text(currentUser.createdAt.slice(0, 10));
 }
