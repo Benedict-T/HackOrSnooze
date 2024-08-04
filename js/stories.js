@@ -20,8 +20,8 @@ async function getAndShowStoriesOnStart() {
  * Returns the markup for the story.
  */
 
-function generateStoryMarkup(story, showDeletionBtn = false) {
-  // console.debug("generateStoryMarkup", story);
+function generateStoryMarkup(story, showDeleteBtn = false) {
+  console.debug("generateStoryMarkup", story);
 
   const hostName = story.getHostName();
   const showStar = Boolean(currentUser);
@@ -30,7 +30,7 @@ function generateStoryMarkup(story, showDeletionBtn = false) {
       <li id="${story.storyId}">
        <div>
        ${showDeleteBtn ? getDeleteBtnHTML() : ""} 
-       ${ShowStar ? getStarHTML(story, currentUser)
+       ${showStar ? getStarHTML(story, currentUser)
         : ""}
       
       <a href="${story.url}" target="a_blank" class="story-link">
@@ -72,7 +72,7 @@ function putStoriesOnPage() {
 
   // loop through all of our stories and generate HTML for them
   for (let story of storyList.stories) {
-    const $story = generateStoryMarkup(story);
+    const $story = generateStoryMarkup(story, false);
     $allStoriesList.append($story);
   }
 

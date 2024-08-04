@@ -1,7 +1,7 @@
 "use strict";
 // contains classes to manage the data of the app and the connection to the API. The name *models.js* to describe a file containing these kinds of classes that focus on the data and logic about the data. UI stuff shouldn’t go here.
 
-**Read this file thoroughly.** There is a new keyword here, ***static***. Make sure you understand what it means before moving on.
+// **Read this file thoroughly.** There is a new keyword here, ***static***. Make sure you understand what it means before moving on.
 const BASE_URL = "https://hack-or-snooze-v3.herokuapp.com";
 
 /******************************************************************************
